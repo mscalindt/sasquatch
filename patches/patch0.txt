@@ -38443,7 +38443,7 @@ diff --strip-trailing-cr -NBbaur squashfs-tools/unsquashfs.c squashfs-tools-patc
  	}
  
  	/*
-@@ -1777,17 +1791,74 @@
+@@ -1777,17 +1791,75 @@
  {
  	squashfs_super_block_3 sBlk_3;
  	struct squashfs_super_block sBlk_4;
@@ -38487,8 +38487,9 @@ diff --strip-trailing-cr -NBbaur squashfs-tools/unsquashfs.c squashfs-tools-patc
 +    }
 +
 +    // CJH: Notify if endianess is different
-+    if(swap)
++    if(swap) {
 +        ERROR("Reading a different endian SQUASHFS filesystem on %s\n", source);
++    }
  
  	/*
  	 * Try to read a Squashfs 4 superblock
